@@ -15,8 +15,4 @@ mongoose.connect(process.env.MONGODB_URI)
     })
     .catch(error => console.log(error));
 
-app.get('/', (req, res) => {
-  res.send('<b>Api working!</b>');
-})
-
 app.use("/api/user",userRoutes);

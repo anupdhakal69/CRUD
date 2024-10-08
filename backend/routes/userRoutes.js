@@ -4,7 +4,7 @@ import express from 'express';
 const router = express.Router();
 
 //create a new user
-router.post("/", async (req, res) => {
+router.post("/create", async (req, res) => {
 
     const { name, age, email } = req.body;
 
@@ -50,6 +50,19 @@ router.delete("/delete/:id", async (req, res) => {
         res.status(200).json(deleteUser);
 
     } catch (error) {
+        res.status(500).json({ error: error.message });
+    }
+})
+
+//update a user by id
+router.patch("/update/:id", async (req, res) => {
+
+    const { name, age, email } = req.body;
+    try {
+        const updateUser = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        res.status(200).json(updateUser);
+
+    }  catch (error) {
         res.status(500).json({ error: error.message });
     }
 })
