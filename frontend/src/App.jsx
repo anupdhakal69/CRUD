@@ -1,11 +1,22 @@
 import React from 'react'
+import Navbar from './Navbar'
+import {Routes, Route} from 'react-router-dom'
+import Create from './Create'
+import Read from './Read'
+import Update from './Update'
 
 const App = () => {
   return (
     <div>
-      <button className='btn btn-info mx-auto'>Hello heheh</button>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Create />} />
+        <Route path='/all' element={<Read />} />
+        <Route path='/update' element={<Update />} />
+      </Routes>
     </div>
   )
 }
 
 export default App
+
