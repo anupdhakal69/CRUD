@@ -6,13 +6,13 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const Create = () => {
-
   
       const [name, setName] = useState("")
       const [age, setAge] = useState(0)
       const [email, setEmail] = useState("")
       const [error, setError] = useState("")
       
+      const navigate = useNavigate() 
 
       const handleSubmit = async (e) => {
           e.preventDefault()
@@ -41,7 +41,6 @@ const Create = () => {
             setError(response.error)
           }
           
-          const navigate = useNavigate() 
           navigate('/all')
         }
 
