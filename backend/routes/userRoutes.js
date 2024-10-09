@@ -10,7 +10,7 @@ router.post("/create", async (req, res) => {
 
     try {
         const userAdd = await User.create({ name, age, email });
-        res.status(201).res.json(userAdd);
+        res.status(201).json(userAdd);
         
     } catch (error) {
         console.log(error.message);       
