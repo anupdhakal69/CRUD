@@ -35,13 +35,13 @@ const Create = () => {
             setAge(0)
             setEmail("")
             setError("")
+            navigate('/all')
 
           } else{
             console.log(response,'Vayena huhuhu')
             setError(response.error)
           }
           
-          navigate('/all')
         }
 
   return (
